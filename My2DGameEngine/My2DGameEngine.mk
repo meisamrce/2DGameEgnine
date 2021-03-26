@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=meisamrce
-Date                   :=23/03/2021
+Date                   :=27/03/2021
 CodeLitePath           :="/Users/meisamrce/Library/Application Support/CodeLite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -dynamiclib -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/Applications/codelite.app/Contents/SharedSupport/
-Objects0=../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(ObjectSuffix) 
+Objects0=../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) 
 
 
 
@@ -91,14 +91,6 @@ PreBuild:
 ##
 ## Objects
 ##
-../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix): Game.cpp ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Game.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Game.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(DependSuffix): Game.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(DependSuffix) -MM Game.cpp
-
-../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(PreprocessSuffix): Game.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(PreprocessSuffix) Game.cpp
-
 ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(ObjectSuffix): Main.cpp ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Main.cpp$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(DependSuffix): Main.cpp
@@ -106,6 +98,14 @@ PreBuild:
 
 ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(PreprocessSuffix): Main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(PreprocessSuffix) Main.cpp
+
+../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix): Game.cpp ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Game.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Game.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(DependSuffix): Game.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(DependSuffix) -MM Game.cpp
+
+../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(PreprocessSuffix): Game.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(PreprocessSuffix) Game.cpp
 
 
 -include ../build-$(ConfigurationName)/My2DGameEngine//*$(DependSuffix)

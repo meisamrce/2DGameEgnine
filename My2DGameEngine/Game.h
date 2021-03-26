@@ -22,7 +22,11 @@ private:
             unsigned int m_Width;
             unsigned int m_Height;
             string m_Title;
-
+            
+            GLuint VAO;
+            GLuint sp;
+            
+            
 };
 
 #endif // GAME_H
