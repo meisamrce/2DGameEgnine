@@ -29,11 +29,13 @@ void Game::run()
 void Game::init()
 {
     
-    cout << "Init" << endl;
+    Logger::getInstance()->init();
+    
+    iLog("Init");
     
     if (!glfwInit())
     {
-        cout << "Error glfwInit " << endl;
+        eLog("glfwInit Error!");
         return;
     }
     
@@ -50,17 +52,16 @@ void Game::init()
     
      if (!m_Window)
      {
-         cout << "Error glfwCreateWindow " << endl;
+         eLog("glfwCreateWindow Error!");
          return;
      }
     
     
     glfwMakeContextCurrent(m_Window);//create opengl context
     
-    cout << glGetString(GL_VERSION) << endl;
-    cout << glGetString(GL_RENDERER) << endl;
-    cout << glGetString(GL_VENDOR) << endl;
-    cout << glGetString(GL_SHADING_LANGUAGE_VERSION) << endl;
+    iLog("OpenGL Version : " + Tools::getInstance()->toString(glGetString(GL_VERSION)));
+    iLog("OpenGL Shader Version : " + Tools::getInstance()->toString(glGetString(GL_SHADING_LANGUAGE_VERSION)));
+    iLog("Renderer : " + Tools::getInstance()->toString(glGetString(GL_RENDERER)));
 
 
     
@@ -74,89 +75,25 @@ void Game::init()
     
     
     
-    glGenVertexArrays(1,&VAO);
-    glBindVertexArray(VAO);
-    
-    float vertexData[] = {
-        0.0f,1.0f, //v1-x,y
-        -1.0f,-1.0f, //v2-x,y
-        1.0f,-1.0f, //v3-x,y        
-    };
-    
-    GLuint VBO;
-    glGenBuffers(1,&VBO);
-    glBindBuffer(GL_ARRAY_BUFFER,VBO);
-    glBufferData(GL_ARRAY_BUFFER,sizeof(vertexData),vertexData,GL_STATIC_DRAW);
-    
-    glEnableVertexAttribArray(0);//position
-    glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float),(void*)0);
-    
-    
-    glBindBuffer(GL_ARRAY_BUFFER,0);//unbind
-    glBindVertexArray(0);
-
-
-    //vertex shader
-    const char * vs =  "#version 410\n"
-    "layout ( location = 0 ) in vec2 vertexPosition;\n"
-    "void main() {\n"
-    "gl_Position = vec4(vertexPosition.xy,0.0,1.0);\n"
-    "}\0";
-    
-    GLuint vsid;
-    vsid = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vsid,1,&vs,NULL);
-    glCompileShader(vsid);
-
-    
-    
-    
-    //fragment shader
-    const char * fs =  "#version 410\n"
-    "out vec4 color;\n"
-    "void main(){\n"
-    "color = vec4(1.0,0.0,0.0,1.0);\n"
-    "}\0";
-    
-    GLuint fsid;
-    fsid = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fsid,1,&fs,NULL);
-    glCompileShader(fsid);
-
-    //shader program
-    sp = glCreateProgram();
-    glAttachShader(sp,vsid);
-    glAttachShader(sp,fsid);
-    glLinkProgram(sp);
+    s1 = new Sprite("media/shaders/sprite.vert","media/shaders/sprite.frag");
     
     
 }
 
 void Game::processInput()
 {
-    //cout << "processInput" << endl;
 }
 
 void Game::update()
 {
-    //cout << "update" << endl;
 }
 
 void Game::render()
 {
-   // cout << "render" << endl;
     
     glClear(GL_COLOR_BUFFER_BIT);
-    
-    
-    /*
-            opengl draw
-     */
-     
-     glUseProgram(sp);
-     glBindVertexArray(VAO);
-     glDrawArrays(GL_TRIANGLES,0,3);
-    
+         
+    s1->draw();
     
     glfwSwapBuffers(m_Window);
     glfwPollEvents();
@@ -165,7 +102,9 @@ void Game::render()
 
 void Game::clean()
 {
-    cout << "clean" << endl;
+    iLog("Clean");
+    
+    DELETE_SAFE(s1);
     
     if(m_Window)
     {
@@ -174,4 +113,7 @@ void Game::clean()
     }
     
     glfwTerminate();
+    
+    Logger::getInstance()->clean();
+    
 }

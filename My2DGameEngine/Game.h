@@ -1,7 +1,9 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "Global.h"
+
+#include "Engine.h"
+#include "Sprite.h"
 
 class Game
 {
@@ -23,8 +25,7 @@ private:
             unsigned int m_Height;
             string m_Title;
             
-            GLuint VAO;
-            GLuint sp;
+            Sprite * s1;
             
             
 };

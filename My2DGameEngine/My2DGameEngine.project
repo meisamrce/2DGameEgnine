@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="My2DGameEngine" Version="11000" InternalType="Console">
   <VirtualDirectory Name="Sources">
+    <File Name="Sprite.cpp"/>
+    <File Name="Shader.cpp"/>
+    <File Name="Logger.cpp"/>
+    <File Name="Tools.cpp"/>
     <File Name="Game.cpp"/>
     <File Name="Main.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Headers">
+    <File Name="Sprite.h"/>
+    <File Name="Shader.h"/>
+    <File Name="Engine.h"/>
+    <File Name="Logger.h"/>
+    <File Name="Tools.h"/>
     <File Name="Game.h"/>
     <File Name="Global.h"/>
   </VirtualDirectory>
@@ -21,7 +30,7 @@
       <ResourceCompiler Options=""/>
     </GlobalSettings>
     <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
-      <Compiler Options="-g;-O0;-Wall" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+      <Compiler Options="-g;-O0;-std=c++11" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
         <IncludePath Value="/usr/local/Cellar/glfw/3.3.3/include/"/>
       </Compiler>
