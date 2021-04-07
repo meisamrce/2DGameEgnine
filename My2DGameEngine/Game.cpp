@@ -71,7 +71,7 @@ void Game::init()
     //RGBA
    //0.0 to 1.0 
    // 0 1.0 0 1.0  
-    glClearColor(0.0f,1.0f,0.0f,1.0f);//background window green
+    glClearColor(0.0f,0.0f,0.0f,0.0f);//background window green
     
     
     
