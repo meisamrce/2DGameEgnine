@@ -3,6 +3,7 @@
 
 #include "Engine.h"
 #include "Shader.h"
+#include "Vertex.h"
 
 class Sprite
 {

@@ -9,6 +9,7 @@
     <File Name="Main.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Headers">
+    <File Name="Vertex.h"/>
     <File Name="Sprite.h"/>
     <File Name="Shader.h"/>
     <File Name="Engine.h"/>

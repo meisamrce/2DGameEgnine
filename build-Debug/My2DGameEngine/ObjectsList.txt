@@ -1,1 +1,1 @@
-../build-Debug/My2DGameEngine/Game.cpp.o ../build-Debug/My2DGameEngine/Main.cpp.o ../build-Debug/My2DGameEngine/Tools.cpp.o ../build-Debug/My2DGameEngine/Logger.cpp.o ../build-Debug/My2DGameEngine/Shader.cpp.o ../build-Debug/My2DGameEngine/Sprite.cpp.o
+../build-Debug/My2DGameEngine/Shader.cpp.o ../build-Debug/My2DGameEngine/Game.cpp.o ../build-Debug/My2DGameEngine/Main.cpp.o ../build-Debug/My2DGameEngine/Tools.cpp.o ../build-Debug/My2DGameEngine/Logger.cpp.o ../build-Debug/My2DGameEngine/Sprite.cpp.o

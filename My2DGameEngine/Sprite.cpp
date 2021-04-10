@@ -23,6 +23,7 @@ void Sprite::init()
     glGenVertexArrays(1,&m_VAO);
     glBindVertexArray(m_VAO);
     
+    /*
     float vertexData[] = {
         0.0f,0.5f, //v1-x,y
         0.5f,0.0f, //v2-x,y
@@ -31,8 +32,16 @@ void Sprite::init()
         0.5f,0.5f, //v5-x,y
         0.5f,0.0f, //v6-x,y        
 
-    };
+    };*/
     
+    Vertex vertexData[6];
+    vertexData[0].setPostion(0,1);
+    vertexData[1].setPostion(1,0);
+    vertexData[2].setPostion(0,0);
+    vertexData[3].setPostion(0,1);
+    vertexData[4].setPostion(1,1);
+    vertexData[5].setPostion(1,0);
+
     
     GLuint VBO;
     glGenBuffers(1,&VBO);
@@ -40,7 +49,7 @@ void Sprite::init()
     glBufferData(GL_ARRAY_BUFFER,sizeof(vertexData),vertexData,GL_STATIC_DRAW);
     
     glEnableVertexAttribArray(0);//position
-    glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float) * 2,(void*)0);
+    glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(Vertex),(void*)offsetof(Vertex,position));
     
     
     glBindBuffer(GL_ARRAY_BUFFER,0);//unbind

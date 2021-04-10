@@ -5,6 +5,7 @@
 #define GL_SILENCE_DEPRECATION
 #define GLFW_INCLUDE_NONE
 
+#include <cstddef>
 #include <vector>
 #include <cstdio>
 #include <ctime>

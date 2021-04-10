@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=meisamrce
-Date                   :=07/04/2021
+Date                   :=10/04/2021
 CodeLitePath           :="/Users/meisamrce/Library/Application Support/CodeLite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -dynamiclib -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/Applications/codelite.app/Contents/SharedSupport/
-Objects0=../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Tools.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(ObjectSuffix) 
+Objects0=../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Tools.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(ObjectSuffix) 
 
 
 
@@ -91,6 +91,14 @@ PreBuild:
 ##
 ## Objects
 ##
+../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix): Shader.cpp ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Shader.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Shader.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix): Shader.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix) -MM Shader.cpp
+
+../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(PreprocessSuffix): Shader.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(PreprocessSuffix) Shader.cpp
+
 ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix): Game.cpp ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Game.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Game.cpp$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(DependSuffix): Game.cpp
@@ -122,14 +130,6 @@ PreBuild:
 
 ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(PreprocessSuffix): Logger.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(PreprocessSuffix) Logger.cpp
-
-../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix): Shader.cpp ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Shader.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Shader.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix): Shader.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix) -MM Shader.cpp
-
-../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(PreprocessSuffix): Shader.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(PreprocessSuffix) Shader.cpp
 
 ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(ObjectSuffix): Sprite.cpp ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Sprite.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Sprite.cpp$(ObjectSuffix) $(IncludePath)
