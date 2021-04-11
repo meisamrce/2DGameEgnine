@@ -22,18 +22,7 @@ void Sprite::init()
     
     glGenVertexArrays(1,&m_VAO);
     glBindVertexArray(m_VAO);
-    
-    /*
-    float vertexData[] = {
-        0.0f,0.5f, //v1-x,y
-        0.5f,0.0f, //v2-x,y
-        0.0f,0.0f, //v3-x,y        
-        0.0f,0.5f, //v4-x,y
-        0.5f,0.5f, //v5-x,y
-        0.5f,0.0f, //v6-x,y        
-
-    };*/
-    
+        
     Vertex vertexData[6];
     vertexData[0].setPostion(0,1);
     vertexData[1].setPostion(1,0);

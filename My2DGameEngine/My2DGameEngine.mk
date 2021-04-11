@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=meisamrce
-Date                   :=10/04/2021
+Date                   :=11/04/2021
 CodeLitePath           :="/Users/meisamrce/Library/Application Support/CodeLite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -dynamiclib -fPIC
@@ -36,12 +36,12 @@ PreprocessOnlySwitch   :=-E
 ObjectsFileList        :=$(IntermediateDirectory)/ObjectsList.txt
 PCHCompileFlags        :=
 LinkOptions            :=  -framework OpenGL
-IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)/usr/local/Cellar/glfw/3.3.3/include/ 
+IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)/usr/local/Cellar/glfw/3.3.3/include/ $(IncludeSwitch)/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/ $(IncludeSwitch)/usr/local/Cellar/devil/1.8.0_2/include/ 
 IncludePCH             := 
 RcIncludePath          := 
-Libs                   := $(LibrarySwitch)glfw.3.3 
-ArLibs                 :=  "libglfw.3.3.dylib" 
-LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)/usr/local/Cellar/glfw/3.3.3/lib/ 
+Libs                   := $(LibrarySwitch)glfw.3.3 $(LibrarySwitch)IL $(LibrarySwitch)ILU $(LibrarySwitch)SDL2 
+ArLibs                 :=  "libglfw.3.3.dylib" "libIL.dylib" "libILU.dylib" "libSDL2.a" 
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)/usr/local/Cellar/glfw/3.3.3/lib/ $(LibraryPathSwitch)/usr/local/Cellar/sdl2/2.0.14_1/lib/ $(LibraryPathSwitch)/usr/local/Cellar/devil/1.8.0_2/lib/ 
 
 ##
 ## Common variables

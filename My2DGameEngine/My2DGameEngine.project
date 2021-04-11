@@ -34,10 +34,17 @@
       <Compiler Options="-g;-O0;-std=c++11" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
         <IncludePath Value="/usr/local/Cellar/glfw/3.3.3/include/"/>
+        <IncludePath Value="/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2/"/>
+        <IncludePath Value="/usr/local/Cellar/devil/1.8.0_2/include/"/>
       </Compiler>
       <Linker Options="-framework OpenGL" Required="yes">
         <LibraryPath Value="/usr/local/Cellar/glfw/3.3.3/lib/"/>
+        <LibraryPath Value="/usr/local/Cellar/sdl2/2.0.14_1/lib/"/>
+        <LibraryPath Value="/usr/local/Cellar/devil/1.8.0_2/lib/"/>
         <Library Value="libglfw.3.3.dylib"/>
+        <Library Value="libIL.dylib"/>
+        <Library Value="libILU.dylib"/>
+        <Library Value="libSDL2.a"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(ProjectName)" IntermediateDirectory="" Command="$(WorkspacePath)/build-$(WorkspaceConfiguration)/bin/$(OutputFile)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(WorkspacePath)/build-$(WorkspaceConfiguration)/lib" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>

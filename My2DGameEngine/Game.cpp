@@ -33,6 +33,9 @@ void Game::init()
     
     iLog("Init");
     
+    SDL_Init(SDL_INIT_EVERYTHING);
+    ilInit();
+    
     if (!glfwInit())
     {
         eLog("glfwInit Error!");
@@ -67,11 +70,7 @@ void Game::init()
     
     m_Runing = true;
 
-
-    //RGBA
-   //0.0 to 1.0 
-   // 0 1.0 0 1.0  
-    glClearColor(0.0f,0.0f,0.0f,0.0f);//background window green
+    glClearColor(0.0f,0.0f,0.0f,0.0f);
     
     
     
@@ -105,6 +104,10 @@ void Game::clean()
     iLog("Clean");
     
     DELETE_SAFE(s1);
+    
+    
+    SDL_Quit();
+    ilShutDown();
     
     if(m_Window)
     {

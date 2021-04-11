@@ -6,4 +6,6 @@
 -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
 -I/Volumes/Data/My2DGameEngine/My2DGameEngine
 -I/usr/local/Cellar/glfw/3.3.3/include
+-I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2
+-I/usr/local/Cellar/devil/1.8.0_2/include
 -std=c++11

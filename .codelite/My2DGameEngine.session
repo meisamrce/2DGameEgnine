@@ -1,37 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="/Volumes/Data/My2DGameEngine/My2DGameEngine.workspace">
-  <int Value="2" Name="m_selectedTab"/>
+  <int Value="0" Name="m_selectedTab"/>
   <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine.workspace" Name="m_workspaceName"/>
-  <TabInfoArray Name="TabInfoArray">
-    <TabInfo>
-      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Vertex.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="13" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Sprite.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="5" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Sprite.cpp" Name="FileName"/>
-      <int Value="30" Name="FirstVisibleLine"/>
-      <int Value="51" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Global.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="8" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-  </TabInfoArray>
+  <TabInfoArray Name="TabInfoArray"/>
   <SerializedObject Name="m_breakpoints">
     <long Value="0" Name="Count"/>
   </SerializedObject>

@@ -15,6 +15,8 @@
 #include <sstream>
 #include <GLFW/glfw3.h>
 #include <OpenGL/gl3.h>
+#include <SDL.h>
+#include <IL/il.h>
 
 using namespace std;
 
