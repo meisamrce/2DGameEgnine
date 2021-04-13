@@ -4,6 +4,7 @@
 
 #include "Engine.h"
 #include "Sprite.h"
+#include "Camera2D.h"
 
 class Game
 {
@@ -26,6 +27,7 @@ private:
             string m_Title;
             
             Sprite * s1;
+            Sprite *s2;
             
             
 };

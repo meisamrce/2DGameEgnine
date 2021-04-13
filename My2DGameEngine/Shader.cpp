@@ -2,8 +2,8 @@
 
 Shader::Shader(const string &vertFile,const string &fragFile)
 {
-    m_PrgramID = glCreateProgram();
-    if(m_PrgramID == 0)
+    m_ProgramID = glCreateProgram();
+    if(m_ProgramID == 0)
     {
         eLog("Error: glCreateProgram !");
     }
@@ -31,47 +31,47 @@ Shader::~Shader()
 {
     if(m_VertexID)
     {
-        glDetachShader(m_PrgramID,m_VertexID);
+        glDetachShader(m_ProgramID,m_VertexID);
         glDeleteShader(m_VertexID);
         m_VertexID = 0;
     }
     
     if(m_FragID)
     {
-        glDetachShader(m_PrgramID,m_FragID);
+        glDetachShader(m_ProgramID,m_FragID);
         glDeleteShader(m_FragID);
         m_FragID = 0;
     }
     
     
-    if(m_PrgramID)
+    if(m_ProgramID)
     {
         this->unuse();
-        glDeleteProgram(m_PrgramID);
-        m_PrgramID = 0;
+        glDeleteProgram(m_ProgramID);
+        m_ProgramID = 0;
     }
     
 }
 
 void Shader::linkShader()
 {
-        glAttachShader(m_PrgramID,m_VertexID);
-        glAttachShader(m_PrgramID,m_FragID);
+        glAttachShader(m_ProgramID,m_VertexID);
+        glAttachShader(m_ProgramID,m_FragID);
         
-        glLinkProgram(m_PrgramID);
+        glLinkProgram(m_ProgramID);
         
         GLint success = 0;
-        glGetProgramiv(m_PrgramID,GL_LINK_STATUS,&success);
+        glGetProgramiv(m_ProgramID,GL_LINK_STATUS,&success);
         
         if(success == GL_FALSE)
         {
                 GLint maxLen = 0;
         
-                glGetShaderiv(m_PrgramID,GL_INFO_LOG_LENGTH,&maxLen);
+                glGetShaderiv(m_ProgramID,GL_INFO_LOG_LENGTH,&maxLen);
                 
                 vector<char> error(maxLen);
                 
-                glGetProgramInfoLog(m_PrgramID,maxLen,&maxLen,&error[0]);
+                glGetProgramInfoLog(m_ProgramID,maxLen,&maxLen,&error[0]);
                 
                 eLog("Link  Error " +  Tools::getInstance()->toString(error) ); 
         }
@@ -127,7 +127,7 @@ void Shader::compileShader(const string& file, GLuint id)
 
 void Shader::use()
 {
-     glUseProgram(m_PrgramID);
+     glUseProgram(m_ProgramID);
 }
 
 
@@ -137,3 +137,76 @@ void Shader::unuse()
 }
 
 
+void Shader::setUniform(const string& name, GLuint value)
+{
+    GLint location = glGetUniformLocation(m_ProgramID,name.c_str());
+    if(location == -1)
+        return;
+        
+    glUniform1ui(location,value);
+}
+
+void Shader::setUniform(const string& name, GLint value)
+{
+    GLint location = glGetUniformLocation(m_ProgramID,name.c_str());
+    if(location == -1)
+        return;
+    
+    glUniform1i(location,value);
+}
+
+void Shader::setUniform(const string& name, GLfloat value)
+{
+    GLint location = glGetUniformLocation(m_ProgramID,name.c_str());
+    if(location == -1)
+        return;
+        
+    glUniform1f(location,value);
+}
+
+void Shader::setUniform(const string& name, GLdouble value)
+{
+    GLint location = glGetUniformLocation(m_ProgramID,name.c_str());
+    if(location == -1)
+        return;
+
+    glUniform1d(location,value);
+}
+
+void Shader::setUniform(const string& name, glm::vec2 value)
+{
+    GLint location = glGetUniformLocation(m_ProgramID,name.c_str());
+    if(location == -1)
+        return;
+        
+    glUniform2f(location,value.x,value.y);
+}
+
+void Shader::setUniform(const string& name, glm::vec3 value)
+{
+    GLint location = glGetUniformLocation(m_ProgramID,name.c_str());
+    if(location == -1)
+        return;
+
+    glUniform3f(location,value.x,value.y,value.z);
+}
+
+void Shader::setUniform(const string& name, glm::vec4 value)
+{
+    GLint location = glGetUniformLocation(m_ProgramID,name.c_str());
+    if(location == -1)
+        return;
+        
+    glUniform4f(location,value.x,value.y,value.z,value.w);
+
+}
+
+void Shader::setUniform(const string& name, glm::mat4 value)
+{
+    GLint location = glGetUniformLocation(m_ProgramID,name.c_str());
+    if(location == -1)
+        return;
+        
+    glUniformMatrix4fv(location,1,GL_FALSE,glm::value_ptr(value));
+
+}

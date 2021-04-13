@@ -73,9 +73,13 @@ void Game::init()
     glClearColor(0.0f,0.0f,0.0f,0.0f);
     
     
+    Camera2D::getInstance()->init(m_Width,m_Height);
+        
     
     s1 = new Sprite("media/shaders/sprite.vert","media/shaders/sprite.frag");
-    
+    s1->setPosition(glm::vec2(700,0));
+    s2 = new Sprite("media/shaders/sprite.vert","media/shaders/sprite.frag");
+    s2->setPosition(glm::vec2(0,500));
     
 }
 
@@ -85,6 +89,7 @@ void Game::processInput()
 
 void Game::update()
 {
+    Camera2D::getInstance()->update();
 }
 
 void Game::render()
@@ -93,6 +98,8 @@ void Game::render()
     glClear(GL_COLOR_BUFFER_BIT);
          
     s1->draw();
+    s2->draw();
+    
     
     glfwSwapBuffers(m_Window);
     glfwPollEvents();
@@ -104,7 +111,8 @@ void Game::clean()
     iLog("Clean");
     
     DELETE_SAFE(s1);
-    
+    DELETE_SAFE(s2);
+
     
     SDL_Quit();
     ilShutDown();

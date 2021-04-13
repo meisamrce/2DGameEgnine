@@ -3,6 +3,10 @@
 Sprite::Sprite(const string &vertFile,const string &fragFile)
 {
     m_Shader = new Shader(vertFile,fragFile);
+    m_Position = glm::vec2(0.0f);
+    m_Size = glm::vec2(100,100);//texture width , height
+    m_Scale = 1.0f;
+
     this->init();
 }
 
@@ -52,7 +56,28 @@ void Sprite::init()
 void Sprite::draw()
 {
      m_Shader->use();
-     glBindVertexArray(m_VAO);
-     glDrawArrays(GL_TRIANGLES,0,6);
+     
+     glm::mat4 model(1.0f);
+     model = glm::translate(model,glm::vec3(m_Position,0));//translate
+    //rotate
+    model = glm::scale(model,glm::vec3(m_Size * glm::vec2(m_Scale,m_Scale)  ,1.0f));   //sacle
+     
+     m_Shader->setUniform("model",model);
+     m_Shader->setUniform("projection",Camera2D::getInstance()->getCameraMatrix());
 
+     
+    glBindVertexArray(m_VAO);
+    glDrawArrays(GL_TRIANGLES,0,6);
+
+}
+
+
+void Sprite::setPosition(const glm::vec2& value)
+{
+    m_Position = value;
+}
+
+glm::vec2 Sprite::getPosition() const
+{
+    return m_Position;
 }
