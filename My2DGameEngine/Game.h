@@ -29,6 +29,8 @@ private:
             Sprite * s1;
             Sprite *s2;
             
+            float m;
+            
             
 };
 

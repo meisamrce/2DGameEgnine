@@ -1,5 +1,6 @@
 #include "Game.h"
 
+
 Game::Game(unsigned int width,unsigned int height,const string &title)
 {
     m_Width = width;
@@ -48,8 +49,6 @@ void Game::init()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,1);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT,GLFW_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
-
-
     
     m_Window = glfwCreateWindow(m_Width, m_Height,m_Title.c_str(), NULL, NULL);
     
@@ -73,13 +72,15 @@ void Game::init()
     glClearColor(0.0f,0.0f,0.0f,0.0f);
     
     
+    
     Camera2D::getInstance()->init(m_Width,m_Height);
         
     
     s1 = new Sprite("media/shaders/sprite.vert","media/shaders/sprite.frag");
-    s1->setPosition(glm::vec2(700,0));
+    s1->setPosition(glm::vec2(100,100));
     s2 = new Sprite("media/shaders/sprite.vert","media/shaders/sprite.frag");
-    s2->setPosition(glm::vec2(0,500));
+    s2->setPosition(glm::vec2(100,500));
+   
     
 }
 
@@ -90,6 +91,7 @@ void Game::processInput()
 void Game::update()
 {
     Camera2D::getInstance()->update();
+    
 }
 
 void Game::render()

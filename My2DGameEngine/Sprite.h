@@ -15,6 +15,10 @@ class Sprite
         void draw();
         void setPosition(const glm::vec2 &value);
         glm::vec2 getPosition() const;
+        void setScale(float value);
+        float getScale() const;
+        void setRotate(float value);
+        float getRotate() const;
     private:
         void init();
         GLuint m_VAO;
@@ -22,7 +26,7 @@ class Sprite
         glm::vec2 m_Position;
         glm::vec2 m_Size;
         float m_Scale;
-
+        float m_Rotate;
 };
 
 #endif // SPRITE_H

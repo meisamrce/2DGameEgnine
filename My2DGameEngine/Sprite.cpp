@@ -6,7 +6,7 @@ Sprite::Sprite(const string &vertFile,const string &fragFile)
     m_Position = glm::vec2(0.0f);
     m_Size = glm::vec2(100,100);//texture width , height
     m_Scale = 1.0f;
-
+    m_Rotate = 0.0f;
     this->init();
 }
 
@@ -28,13 +28,13 @@ void Sprite::init()
     glBindVertexArray(m_VAO);
         
     Vertex vertexData[6];
+    
     vertexData[0].setPostion(0,1);
     vertexData[1].setPostion(1,0);
     vertexData[2].setPostion(0,0);
     vertexData[3].setPostion(0,1);
     vertexData[4].setPostion(1,1);
     vertexData[5].setPostion(1,0);
-
     
     GLuint VBO;
     glGenBuffers(1,&VBO);
@@ -55,17 +55,21 @@ void Sprite::init()
 
 void Sprite::draw()
 {
-     m_Shader->use();
-     
-     glm::mat4 model(1.0f);
-     model = glm::translate(model,glm::vec3(m_Position,0));//translate
-    //rotate
-    model = glm::scale(model,glm::vec3(m_Size * glm::vec2(m_Scale,m_Scale)  ,1.0f));   //sacle
-     
-     m_Shader->setUniform("model",model);
-     m_Shader->setUniform("projection",Camera2D::getInstance()->getCameraMatrix());
+    m_Shader->use();
+    
+    
+    glm::mat4 model(1.0f);
 
-     
+    model = glm::translate(model,glm::vec3(m_Position,0.0f));//translate
+    model = glm::translate(model,glm::vec3(0.5 * m_Size.x,0.5 * m_Size.y,0.0f));
+    model = glm::rotate(model,glm::radians(m_Rotate),glm::vec3(0.0f,0.0f,1.0f));//rotate
+    model = glm::translate(model,glm::vec3(-0.5 * m_Size.x,-0.5 * m_Size.y,0.0f));
+    model = glm::scale(model,glm::vec3(glm::vec2(m_Size * m_Scale),1.0f));//scale
+
+    m_Shader->setUniform("model",model);
+    m_Shader->setUniform("projection",Camera2D::getInstance()->getCameraMatrix());
+
+
     glBindVertexArray(m_VAO);
     glDrawArrays(GL_TRIANGLES,0,6);
 
@@ -80,4 +84,26 @@ void Sprite::setPosition(const glm::vec2& value)
 glm::vec2 Sprite::getPosition() const
 {
     return m_Position;
+}
+
+
+void Sprite::setScale(float value)
+{
+    m_Scale = value;
+}
+
+float Sprite::getScale() const
+{
+    return m_Scale;
+}
+
+
+void Sprite::setRotate(float value)
+{
+    m_Rotate = value;
+}
+
+float Sprite::getRotate() const
+{
+    return m_Rotate;
 }
