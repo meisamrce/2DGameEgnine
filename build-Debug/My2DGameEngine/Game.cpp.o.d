@@ -177,7 +177,7 @@
   glm/gtc/../mat2x3.hpp glm/gtc/../mat2x4.hpp glm/gtc/../mat3x2.hpp \
   glm/gtc/../mat3x3.hpp glm/gtc/../mat3x4.hpp glm/gtc/../mat4x2.hpp \
   glm/gtc/../mat4x3.hpp glm/gtc/type_ptr.inl Sprite.h Shader.h Vertex.h \
-  Camera2D.h
+  Camera2D.h Texture.h
 
 Game.h:
 
@@ -772,3 +772,5 @@ Shader.h:
 Vertex.h:
 
 Camera2D.h:
+
+Texture.h:

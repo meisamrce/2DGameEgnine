@@ -4,9 +4,9 @@
   <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Camera2D.cpp" Name="FileName"/>
-      <int Value="18" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Texture.cpp" Name="FileName"/>
+      <int Value="59" Name="FirstVisibleLine"/>
+      <int Value="54" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

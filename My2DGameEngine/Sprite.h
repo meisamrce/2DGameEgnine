@@ -5,12 +5,13 @@
 #include "Shader.h"
 #include "Vertex.h"
 #include "Camera2D.h"
+#include "Texture.h"
 
 
 class Sprite
 {
     public:
-        Sprite(const string &vertFile,const string &fragFile);
+        Sprite(const string &image,const string &vertFile,const string &fragFile);
         ~Sprite();
         void draw();
         void setPosition(const glm::vec2 &value);
@@ -27,6 +28,7 @@ class Sprite
         glm::vec2 m_Size;
         float m_Scale;
         float m_Rotate;
+        Texture *m_Texture;
 };
 
 #endif // SPRITE_H

@@ -1,10 +1,11 @@
 #include "Sprite.h"
 
-Sprite::Sprite(const string &vertFile,const string &fragFile)
+Sprite::Sprite(const string &image,const string &vertFile,const string &fragFile)
 {
+    m_Texture = new Texture(image);
     m_Shader = new Shader(vertFile,fragFile);
     m_Position = glm::vec2(0.0f);
-    m_Size = glm::vec2(100,100);//texture width , height
+    m_Size = glm::vec2(m_Texture->getWidth(),m_Texture->getHeight());//texture width , height
     m_Scale = 1.0f;
     m_Rotate = 0.0f;
     this->init();
@@ -12,6 +13,9 @@ Sprite::Sprite(const string &vertFile,const string &fragFile)
 
 Sprite::~Sprite()
 {
+    
+    DELETE_SAFE(m_Texture);
+    
     if(m_VAO != 0)
     {
         glDeleteVertexArrays(1,&m_VAO);
@@ -30,11 +34,18 @@ void Sprite::init()
     Vertex vertexData[6];
     
     vertexData[0].setPostion(0,1);
+    vertexData[0].setUV(0,1);
     vertexData[1].setPostion(1,0);
+    vertexData[1].setUV(1,0);
     vertexData[2].setPostion(0,0);
+    vertexData[2].setUV(0,0);
     vertexData[3].setPostion(0,1);
+    vertexData[3].setUV(0,1);
     vertexData[4].setPostion(1,1);
+    vertexData[4].setUV(1,1);
     vertexData[5].setPostion(1,0);
+    vertexData[5].setUV(1,0);
+
     
     GLuint VBO;
     glGenBuffers(1,&VBO);
@@ -44,6 +55,10 @@ void Sprite::init()
     glEnableVertexAttribArray(0);//position
     glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(Vertex),(void*)offsetof(Vertex,position));
     
+    
+    glEnableVertexAttribArray(1);//uv
+    glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,sizeof(Vertex),(void*)offsetof(Vertex,uv));
+
     
     glBindBuffer(GL_ARRAY_BUFFER,0);//unbind
     glBindVertexArray(0);
@@ -69,7 +84,11 @@ void Sprite::draw()
     m_Shader->setUniform("model",model);
     m_Shader->setUniform("projection",Camera2D::getInstance()->getCameraMatrix());
 
-
+    
+    
+    glActiveTexture(GL_TEXTURE0);
+    m_Shader->setUniform("image",0);
+    glBindTexture(GL_TEXTURE_2D,m_Texture->getTextureID());
     glBindVertexArray(m_VAO);
     glDrawArrays(GL_TRIANGLES,0,6);
 

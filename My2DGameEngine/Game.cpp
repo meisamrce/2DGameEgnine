@@ -72,14 +72,18 @@ void Game::init()
     glClearColor(0.0f,0.0f,0.0f,0.0f);
     
     
+   glEnable(GL_BLEND);
+   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    
     
     Camera2D::getInstance()->init(m_Width,m_Height);
-        
+            
     
-    s1 = new Sprite("media/shaders/sprite.vert","media/shaders/sprite.frag");
+    s1 = new Sprite("media/textures/elf.png","media/shaders/sprite.vert","media/shaders/sprite.frag");
     s1->setPosition(glm::vec2(100,100));
-    s2 = new Sprite("media/shaders/sprite.vert","media/shaders/sprite.frag");
-    s2->setPosition(glm::vec2(100,500));
+    s2 = new Sprite("media/textures/elf.png","media/shaders/sprite.vert","media/shaders/sprite.frag");
+    s2->setPosition(glm::vec2(100,400));
    
     
 }

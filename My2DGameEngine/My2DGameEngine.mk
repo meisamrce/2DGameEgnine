@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=meisamrce
-Date                   :=14/04/2021
+Date                   :=15/04/2021
 CodeLitePath           :="/Users/meisamrce/Library/Application Support/CodeLite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -dynamiclib -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/Applications/codelite.app/Contents/SharedSupport/
-Objects0=../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Tools.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(ObjectSuffix) 
+Objects0=../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Tools.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(ObjectSuffix) 
 
 
 
@@ -131,6 +131,14 @@ PreBuild:
 ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(PreprocessSuffix): Logger.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(PreprocessSuffix) Logger.cpp
 
+../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(ObjectSuffix): Camera2D.cpp ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Camera2D.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Camera2D.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(DependSuffix): Camera2D.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(DependSuffix) -MM Camera2D.cpp
+
+../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(PreprocessSuffix): Camera2D.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(PreprocessSuffix) Camera2D.cpp
+
 ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(ObjectSuffix): Sprite.cpp ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Sprite.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Sprite.cpp$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(DependSuffix): Sprite.cpp
@@ -139,13 +147,13 @@ PreBuild:
 ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(PreprocessSuffix): Sprite.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(PreprocessSuffix) Sprite.cpp
 
-../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(ObjectSuffix): Camera2D.cpp ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Camera2D.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Camera2D.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(DependSuffix): Camera2D.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(DependSuffix) -MM Camera2D.cpp
+../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(ObjectSuffix): Texture.cpp ../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Texture.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Texture.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(DependSuffix): Texture.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(DependSuffix) -MM Texture.cpp
 
-../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(PreprocessSuffix): Camera2D.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(PreprocessSuffix) Camera2D.cpp
+../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(PreprocessSuffix): Texture.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(PreprocessSuffix) Texture.cpp
 
 
 -include ../build-$(ConfigurationName)/My2DGameEngine//*$(DependSuffix)

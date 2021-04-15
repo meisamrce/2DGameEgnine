@@ -31,7 +31,7 @@ void Camera2D::update()
 
     //rotate
     m_CameraMatrix = glm::translate(m_CameraMatrix,glm::vec3(0.5 * m_Size.x,0.5 * m_Size.y,0.0f));
-    m_CameraMatrix = glm::rotate(m_CameraMatrix,glm::radians(m_Rotate),glm::vec3(0.0f,0.0f,1.0f));//rotate
+    m_CameraMatrix = glm::rotate(m_CameraMatrix,glm::radians(m_Rotate),glm::vec3(0.0f,0.0f,1.0f));
     m_CameraMatrix = glm::translate(m_CameraMatrix,glm::vec3(-0.5 * m_Size.x,-0.5 * m_Size.y,0.0f));
 
     //sacle

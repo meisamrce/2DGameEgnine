@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="My2DGameEngine" Version="11000" InternalType="Console">
   <VirtualDirectory Name="Sources">
+    <File Name="Texture.cpp"/>
     <File Name="Camera2D.cpp"/>
     <File Name="Sprite.cpp"/>
     <File Name="Shader.cpp"/>
@@ -10,6 +11,7 @@
     <File Name="Main.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Headers">
+    <File Name="Texture.h"/>
     <File Name="Camera2D.h"/>
     <File Name="Vertex.h"/>
     <File Name="Sprite.h"/>
