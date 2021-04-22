@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=meisamrce
-Date                   :=15/04/2021
+Date                   :=22/04/2021
 CodeLitePath           :="/Users/meisamrce/Library/Application Support/CodeLite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -dynamiclib -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/Applications/codelite.app/Contents/SharedSupport/
-Objects0=../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Tools.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(ObjectSuffix) 
+Objects0=../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Tools.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(ObjectSuffix) 
 
 
 
@@ -91,13 +91,13 @@ PreBuild:
 ##
 ## Objects
 ##
-../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix): Shader.cpp ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Shader.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Shader.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix): Shader.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix) -MM Shader.cpp
+../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(ObjectSuffix): Color.cpp ../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Color.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Color.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(DependSuffix): Color.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(DependSuffix) -MM Color.cpp
 
-../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(PreprocessSuffix): Shader.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(PreprocessSuffix) Shader.cpp
+../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(PreprocessSuffix): Color.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(PreprocessSuffix) Color.cpp
 
 ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix): Game.cpp ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Game.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Game.cpp$(ObjectSuffix) $(IncludePath)
@@ -138,6 +138,14 @@ PreBuild:
 
 ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(PreprocessSuffix): Camera2D.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(PreprocessSuffix) Camera2D.cpp
+
+../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix): Shader.cpp ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Shader.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Shader.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix): Shader.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(DependSuffix) -MM Shader.cpp
+
+../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(PreprocessSuffix): Shader.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(PreprocessSuffix) Shader.cpp
 
 ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(ObjectSuffix): Sprite.cpp ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Sprite.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Sprite.cpp$(ObjectSuffix) $(IncludePath)

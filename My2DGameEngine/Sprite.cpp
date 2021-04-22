@@ -83,6 +83,7 @@ void Sprite::draw()
 
     m_Shader->setUniform("model",model);
     m_Shader->setUniform("projection",Camera2D::getInstance()->getCameraMatrix());
+    m_Shader->setUniform("spriteColor",m_Color.getColor());
 
     
     
@@ -125,4 +126,14 @@ void Sprite::setRotate(float value)
 float Sprite::getRotate() const
 {
     return m_Rotate;
+}
+
+void Sprite::setColor(Color color)
+{
+    m_Color = color;
+}
+
+Color Sprite::getColor() const
+{
+    return m_Color;
 }

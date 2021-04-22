@@ -6,6 +6,7 @@
 #include "Vertex.h"
 #include "Camera2D.h"
 #include "Texture.h"
+#include "Color.h"
 
 
 class Sprite
@@ -20,6 +21,8 @@ class Sprite
         float getScale() const;
         void setRotate(float value);
         float getRotate() const;
+        void setColor(Color color);
+        Color getColor() const;
     private:
         void init();
         GLuint m_VAO;
@@ -29,6 +32,7 @@ class Sprite
         float m_Scale;
         float m_Rotate;
         Texture *m_Texture;
+        Color m_Color;
 };
 
 #endif // SPRITE_H

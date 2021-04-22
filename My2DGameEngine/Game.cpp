@@ -82,9 +82,11 @@ void Game::init()
     
     s1 = new Sprite("media/textures/elf.png","media/shaders/sprite.vert","media/shaders/sprite.frag");
     s1->setPosition(glm::vec2(100,100));
+    s1->setColor(Color(255,0,255,255));
     s2 = new Sprite("media/textures/elf.png","media/shaders/sprite.vert","media/shaders/sprite.frag");
     s2->setPosition(glm::vec2(100,400));
    
+    
     
 }
 
