@@ -1,51 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="/Volumes/Data/My2DGameEngine/My2DGameEngine.workspace">
-  <int Value="4" Name="m_selectedTab"/>
+  <int Value="0" Name="m_selectedTab"/>
   <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine.workspace" Name="m_workspaceName"/>
-  <TabInfoArray Name="TabInfoArray">
-    <TabInfo>
-      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Texture.cpp" Name="FileName"/>
-      <int Value="34" Name="FirstVisibleLine"/>
-      <int Value="60" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Texture.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Sprite.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="13" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Sprite.cpp" Name="FileName"/>
-      <int Value="74" Name="FirstVisibleLine"/>
-      <int Value="90" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Game.cpp" Name="FileName"/>
-      <int Value="50" Name="FirstVisibleLine"/>
-      <int Value="74" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/Volumes/Data/My2DGameEngine/My2DGameEngine/Vertex.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="32" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-  </TabInfoArray>
+  <TabInfoArray Name="TabInfoArray"/>
   <SerializedObject Name="m_breakpoints">
     <long Value="0" Name="Count"/>
   </SerializedObject>

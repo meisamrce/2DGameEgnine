@@ -137,3 +137,8 @@ Color Sprite::getColor() const
 {
     return m_Color;
 }
+
+Texture* Sprite::getTextuer() const
+{
+    return m_Texture;
+}

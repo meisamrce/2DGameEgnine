@@ -23,6 +23,7 @@ class Sprite
         float getRotate() const;
         void setColor(Color color);
         Color getColor() const;
+        Texture * getTextuer() const;
     private:
         void init();
         GLuint m_VAO;

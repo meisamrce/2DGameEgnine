@@ -17,10 +17,18 @@ Game::~Game()
 void Game::run()
 {
     
+    float deltaTime = 0.0f;
+    float lastFrame = 0.0f;
+    
     while(!glfwWindowShouldClose(m_Window) && m_Runing)
     {
+        
+        float currentFrame = glfwGetTime();
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+        
         this->processInput();
-        this->update();
+        this->update(deltaTime);
         this->render();
     }
 
@@ -94,9 +102,20 @@ void Game::processInput()
 {
 }
 
-void Game::update()
+void Game::update(float deltaTime)
 {
     Camera2D::getInstance()->update();
+    
+    
+  //  Camera2D::getInstance()->setScale(0.3);
+    
+    float x = s1->getPosition().x + 100.0f * deltaTime;
+    s1->setPosition(glm::vec2(x,s1->getPosition().y));
+    
+    if( (s1->getPosition().x -  s1->getTextuer()->getWidth() ) >=  m_Width )
+        s1->setPosition(glm::vec2(0,s1->getPosition().y));
+
+    
     
 }
 
