@@ -7,20 +7,14 @@
 #include "Camera2D.h"
 #include "Texture.h"
 #include "Color.h"
+#include "Transform.h"
 
-
-class Sprite
+class Sprite : public Transform
 {
     public:
         Sprite(const string &image,const string &vertFile,const string &fragFile);
         ~Sprite();
         void draw();
-        void setPosition(const glm::vec2 &value);
-        glm::vec2 getPosition() const;
-        void setScale(float value);
-        float getScale() const;
-        void setRotate(float value);
-        float getRotate() const;
         void setColor(Color color);
         Color getColor() const;
         Texture * getTextuer() const;
@@ -28,10 +22,7 @@ class Sprite
         void init();
         GLuint m_VAO;
         Shader *m_Shader;
-        glm::vec2 m_Position;
         glm::vec2 m_Size;
-        float m_Scale;
-        float m_Rotate;
         Texture *m_Texture;
         Color m_Color;
 };

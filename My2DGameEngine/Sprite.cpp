@@ -4,10 +4,7 @@ Sprite::Sprite(const string &image,const string &vertFile,const string &fragFile
 {
     m_Texture = new Texture(image);
     m_Shader = new Shader(vertFile,fragFile);
-    m_Position = glm::vec2(0.0f);
     m_Size = glm::vec2(m_Texture->getWidth(),m_Texture->getHeight());//texture width , height
-    m_Scale = 1.0f;
-    m_Rotate = 0.0f;
     this->init();
 }
 
@@ -95,38 +92,6 @@ void Sprite::draw()
 
 }
 
-
-void Sprite::setPosition(const glm::vec2& value)
-{
-    m_Position = value;
-}
-
-glm::vec2 Sprite::getPosition() const
-{
-    return m_Position;
-}
-
-
-void Sprite::setScale(float value)
-{
-    m_Scale = value;
-}
-
-float Sprite::getScale() const
-{
-    return m_Scale;
-}
-
-
-void Sprite::setRotate(float value)
-{
-    m_Rotate = value;
-}
-
-float Sprite::getRotate() const
-{
-    return m_Rotate;
-}
 
 void Sprite::setColor(Color color)
 {

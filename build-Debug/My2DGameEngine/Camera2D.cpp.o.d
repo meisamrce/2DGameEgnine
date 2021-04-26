@@ -176,7 +176,7 @@
   glm/gtc/../ext/vector_uint1_precision.hpp glm/gtc/../mat2x2.hpp \
   glm/gtc/../mat2x3.hpp glm/gtc/../mat2x4.hpp glm/gtc/../mat3x2.hpp \
   glm/gtc/../mat3x3.hpp glm/gtc/../mat3x4.hpp glm/gtc/../mat4x2.hpp \
-  glm/gtc/../mat4x3.hpp glm/gtc/type_ptr.inl
+  glm/gtc/../mat4x3.hpp glm/gtc/type_ptr.inl Transform.h
 
 Camera2D.h:
 
@@ -763,3 +763,5 @@ glm/gtc/../mat4x2.hpp:
 glm/gtc/../mat4x3.hpp:
 
 glm/gtc/type_ptr.inl:
+
+Transform.h:

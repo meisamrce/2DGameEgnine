@@ -1,5 +1,5 @@
-[INFO]-[2021-04-26 19:19:59]-[Game.cpp:43]-Init
-[INFO]-[2021-04-26 19:20:00]-[Game.cpp:72]-OpenGL Version : 4.1 ATI-4.2.13
-[INFO]-[2021-04-26 19:20:00]-[Game.cpp:73]-OpenGL Shader Version : 4.10
-[INFO]-[2021-04-26 19:20:00]-[Game.cpp:74]-Renderer : AMD Radeon Pro 5500M OpenGL Engine
-[INFO]-[2021-04-26 19:20:23]-[Game.cpp:138]-Clean
+[INFO]-[2021-04-26 19:50:35]-[Game.cpp:43]-Init
+[INFO]-[2021-04-26 19:50:36]-[Game.cpp:72]-OpenGL Version : 4.1 ATI-4.2.13
+[INFO]-[2021-04-26 19:50:36]-[Game.cpp:73]-OpenGL Shader Version : 4.10
+[INFO]-[2021-04-26 19:50:36]-[Game.cpp:74]-Renderer : AMD Radeon Pro 5500M OpenGL Engine
+[INFO]-[2021-04-26 19:50:54]-[Game.cpp:141]-Clean

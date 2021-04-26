@@ -107,10 +107,13 @@ void Game::update(float deltaTime)
     Camera2D::getInstance()->update();
     
     
-  //  Camera2D::getInstance()->setScale(0.3);
+  // Camera2D::getInstance()->setScale(0.3);
     
-    float x = s1->getPosition().x + 100.0f * deltaTime;
-    s1->setPosition(glm::vec2(x,s1->getPosition().y));
+    s1->translateX(100.f * deltaTime);
+    
+    s1->rotate(200.0f * deltaTime);
+    
+    s1->scale(-0.1 * deltaTime);
     
     if( (s1->getPosition().x -  s1->getTextuer()->getWidth() ) >=  m_Width )
         s1->setPosition(glm::vec2(0,s1->getPosition().y));

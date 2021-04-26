@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="My2DGameEngine" Version="11000" InternalType="Console">
   <VirtualDirectory Name="Sources">
+    <File Name="Transform.cpp"/>
     <File Name="Color.cpp"/>
     <File Name="Texture.cpp"/>
     <File Name="Camera2D.cpp"/>
@@ -12,6 +13,7 @@
     <File Name="Main.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Headers">
+    <File Name="Transform.h"/>
     <File Name="Color.h"/>
     <File Name="Texture.h"/>
     <File Name="Camera2D.h"/>

@@ -60,7 +60,8 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/Applications/codelite.app/Contents/SharedSupport/
-Objects0=../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Tools.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(ObjectSuffix) 
+Objects0=../build-$(ConfigurationName)/My2DGameEngine/Transform.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Game.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Tools.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Logger.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Camera2D.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Shader.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Sprite.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/My2DGameEngine/Texture.cpp$(ObjectSuffix) \
+	
 
 
 
@@ -91,6 +92,14 @@ PreBuild:
 ##
 ## Objects
 ##
+../build-$(ConfigurationName)/My2DGameEngine/Transform.cpp$(ObjectSuffix): Transform.cpp ../build-$(ConfigurationName)/My2DGameEngine/Transform.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Transform.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Transform.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/My2DGameEngine/Transform.cpp$(DependSuffix): Transform.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/My2DGameEngine/Transform.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/My2DGameEngine/Transform.cpp$(DependSuffix) -MM Transform.cpp
+
+../build-$(ConfigurationName)/My2DGameEngine/Transform.cpp$(PreprocessSuffix): Transform.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/My2DGameEngine/Transform.cpp$(PreprocessSuffix) Transform.cpp
+
 ../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(ObjectSuffix): Color.cpp ../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/Volumes/Data/My2DGameEngine/My2DGameEngine/Color.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Color.cpp$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/My2DGameEngine/Color.cpp$(DependSuffix): Color.cpp
